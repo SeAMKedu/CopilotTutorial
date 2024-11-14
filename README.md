@@ -21,7 +21,7 @@ Tässä oppaassa kerrotaan, miten GitHub Copilotia käytetään Visual Studio Co
 - Miten käytetään chat-keskusteluja koodin refaktorointiin
 - Miten korjataan virheitä
 
-## Inline chat
+## Mallidatan generointi Inline Chatin avulla
 
 Tehdään GitHub Copilotin avulla ohjelma, joka lukee tiedostosta dataa Suomen suurimmista kaupungeista. Ohjelma järjestää kaupungit eri parametrien mukaan.
 
@@ -34,3 +34,56 @@ Tee VS Codella tiedosto cities.txt. VS Coden editori tarjoaa heti tekoälyavusti
 Näyttöön avautuvassa ikkunassa (Inline Chat) voi antaa koodiehdotuksia. Tällä kertaa pyydämme tekoälyä tekemään listan 30 suurimmasta kaupungista. Voit pyytää tekoälyä tekemään listan esimerkiksi näin:
 
 ![](images/secondinlinechat.png)
+
+Paina oikeassa reunassa olevaa nuolinäppäintä ja Copilot generoi tiedot.
+
+Lista ei ole välttämättä vielä haluamassamme muodossa. Esimerkiksi alueiden nimet voivat olla osin englanninkielisiä. Voit tarkentaa kehotetta eli promptia ja generoida listan kaupungeista uudestaan. Voit antaa kehotteen myös suomeksi, mutta englanninkieliset kehotteet toimivat usein paremmin.
+
+![](images/fileofcities.png)
+
+Kun kaupunkien tiedot ovat haluamassasi muodossa, paina Accept. Poista otsikkorivi alusta ja tallenna tiedosto.
+
+Huomaa, että listassa olevat kaupunkien tiedot ovat epäluotettavia. Käytimme Copilotia nyt vain mallidatan luomiseksi.
+
+## Ohjelmakoodin generointi Inline Chatin avulla
+
+Pyydetään Copilotia nyt generoimaan Python-ohjelma, joka lukee cities.txt-tiedoston ja tekee kaupungeista listan olioita (käytetään sanakirja-tietorakennetta).
+
+Tee uusi tiedosto readcities.py ja avaa Inline Chat. Kokeile seuraavaa promptia:
+```
+Make a program, which reads the file cities.txt. The program creates a list of city dictionaries.
+```
+
+Copilot ei välttämättä osaa huomioida tiedoston cities.txt kenttiä. Promptia täytyy todennäköisesti tarkentaa esimerkiksi näin:
+```
+Make a program, which reads the file cities.txt. The program creates a list of city dictionaries. Each row in the file contains the following fields: name, region, population, latitude and longitude.
+```
+
+Copilot ei välttämättä tuota hyvää ohjelmakoodia heti. Joskus Inline Chat ikkunan sulkeminen ja uudelleen yrittäminen saattaa auttaa. Promptausta voi myös edelleen tarkentaa.
+
+Ohjelmakoodin pitäisi näyttää nyt suurin piirtein tältä:
+
+```python
+def read_cities(file_path):
+    cities = []
+    with open(file_path, 'r') as file:
+        for line in file:
+            name, region, population, latitude, longitude = line.strip().split(',')
+            city = {
+                'name': name,
+                'region': region,
+                'population': int(population),
+                'latitude': float(latitude),
+                'longitude': float(longitude)
+            }
+            cities.append(city)
+    return cities
+
+if __name__ == "__main__":
+    file_path = 'cities.txt'
+    cities = read_cities(file_path)
+    for city in cities:
+        print(city)
+```
+
+Kun ohjelma on valmis, kokeile ajaa se.

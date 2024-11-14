@@ -1,31 +1,30 @@
-name,region,population,latitude,longitude
 Helsinki,Uusimaa,656229,60.1695,24.9354
-Espoo,Uusimaa,291439,60.2055,24.6559
+Espoo,Uusimaa,292913,60.2055,24.6559
 Tampere,Pirkanmaa,238140,61.4991,23.7871
 Vantaa,Uusimaa,233775,60.2941,25.0408
-Oulu,North Ostrobothnia,204327,65.0121,25.4651
-Turku,Southwest Finland,191603,60.4518,22.2666
-Jyväskylä,Central Finland,143400,62.2415,25.7209
+Oulu,Pohjois-Pohjanmaa,203750,65.0121,25.4651
+Turku,Varsinais-Suomi,191603,60.4518,22.2666
+Jyväskylä,Keski-Suomi,142511,62.2426,25.7473
 Lahti,Päijät-Häme,120093,60.9827,25.6615
-Kuopio,Northern Savonia,119249,62.8924,27.677
-Kouvola,Kymenlaakso,83211,60.8681,26.7042
-Pori,Satakunta,83597,61.4851,21.7978
-Joensuu,North Karelia,76805,62.601,29.7634
-Lappeenranta,South Karelia,72331,61.0583,28.1887
+Kuopio,Pohjois-Savo,119249,62.8924,27.677
+Kouvola,Kymenlaakso,83318,60.8681,26.7042
+Pori,Satakunta,83520,61.4851,21.7978
+Joensuu,Pohjois-Karjala,76805,62.6001,29.7634
+Lappeenranta,Etelä-Karjala,72331,61.0583,28.1887
 Hämeenlinna,Kanta-Häme,67995,60.995,24.4643
-Vaasa,Ostrobothnia,67176,63.096,21.6158
-Rovaniemi,Lapland,63000,66.5039,25.7294
-Seinäjoki,South Ostrobothnia,62800,62.7903,22.8403
-Mikkeli,South Savonia,53500,61.6886,27.2724
-Kotka,Kymenlaakso,52800,60.4664,26.9458
-Salo,Southwest Finland,51500,60.3833,23.1333
-Porvoo,Uusimaa,50700,60.3932,25.663
-Kokkola,Central Ostrobothnia,47400,63.8385,23.1307
-Lohja,Uusimaa,46700,60.2485,24.0658
-Hyvinkää,Uusimaa,46100,60.6333,24.8636
-Järvenpää,Uusimaa,45000,60.4739,25.0894
-Nurmijärvi,Uusimaa,43000,60.464,24.8074
-Rauma,Satakunta,39600,61.1275,21.5113
-Kirkkonummi,Uusimaa,39000,60.1239,24.4383
-Tuusula,Uusimaa,38000,60.4036,25.0264
-Kajaani,Kainuu,37000,64.2273,27.7285
+Vaasa,Pohjanmaa,67173,63.0951,21.6165
+Rovaniemi,Lappi,63564,66.5039,25.7294
+Seinäjoki,Etelä-Pohjanmaa,62832,62.7903,22.8405
+Mikkeli,Etelä-Savo,53582,61.6886,27.2724
+Kotka,Kymenlaakso,52010,60.4664,26.9451
+Salo,Varsinais-Suomi,51460,60.3833,23.1333
+Porvoo,Uusimaa,50717,60.3932,25.6639
+Kokkola,Keski-Pohjanmaa,47255,63.8385,23.1307
+Lohja,Uusimaa,46716,60.2485,24.0653
+Hyvinkää,Uusimaa,46191,60.6338,24.8636
+Nurmijärvi,Uusimaa,42955,60.4644,24.8074
+Järvenpää,Uusimaa,42743,60.4738,25.089
+Rauma,Satakunta,39641,61.1275,21.5113
+Kirkkonummi,Uusimaa,39206,60.1239,24.4384
+Tuusula,Uusimaa,38873,60.403,25.026
+Kajaani,Kainuu,37531,64.2273,27.7285
