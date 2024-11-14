@@ -87,3 +87,24 @@ if __name__ == "__main__":
 ```
 
 Kun ohjelma on valmis, kokeile ajaa se.
+
+Muutetaan ohjelmaa vielä siten, että siinä on main-funktio. Maalaa ohjelman loppuosa (if-lause). Valitse Ctrl-I tai paina vasempaan reunaan ilmesteynyttä keltaista symbolia. Valitse sitten Modify using Copilot.
+
+![](images/mainmethod.png)
+
+Anna Inline Chatille kehote:
+```
+Use main method
+```
+
+Ohjelman loppuosa näyttää nyt tältä:
+```python
+def main():
+    file_path = 'cities.txt'
+    cities = read_cities(file_path)
+    for city in cities:
+        print(city)
+
+if __name__ == "__main__":
+    main()
+```
