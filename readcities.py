@@ -13,8 +13,17 @@ def read_cities(file_path):
             cities.append(city)
     return cities
 
-if __name__ == "__main__":
+def main():
     file_path = 'cities.txt'
     cities = read_cities(file_path)
+    # sort cities by name
+    cities = sorted(cities, key=lambda city: city['name'])
     for city in cities:
         print(city)
+    # calculate total population
+    total_population = sum(city['population'] for city in cities)
+    print('Total population:', total_population)
+
+
+if __name__ == "__main__":
+    main()
