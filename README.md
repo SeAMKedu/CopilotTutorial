@@ -27,7 +27,10 @@ Tehdään GitHub Copilotin avulla ohjelma, joka lukee tiedostosta dataa Suomen s
 
 Tietoja kaupungeista voitaisiin hakea esimerkiksi Tilastokeskuksen sivuilta. Tehdään tekstitiedosto kaupungeista nyt kuitenkin tekoälyn avulla.
 
-Tee VS Codella tiedosto cities.txt.
+Tee VS Codella tiedosto cities.txt. VS Coden editori tarjoaa heti tekoälyavustinta käyttöön. Paina Ctrl+I, kuten VS Code ehdottaa.
 
 ![](images/firstinlinechat.png)
 
+Näyttöön avautuvassa ikkunassa (Inline Chat) voi antaa koodiehdotuksia. Tällä kertaa pyydämme tekoälyä tekemään listan 30 suurimmasta kaupungista. Voit pyytää tekoälyä tekemään listan esimerkiksi näin:
+
+![](images/secondinlinechat.png)
