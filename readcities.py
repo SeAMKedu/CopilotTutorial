@@ -20,6 +20,7 @@ def main():
     cities = sorted(cities, key=lambda city: city['name'])
     for city in cities:
         print(city)
+
     # calculate total population
     total_population = sum(city['population'] for city in cities)
     print('Total population:', total_population)
