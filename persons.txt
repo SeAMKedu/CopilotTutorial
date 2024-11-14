@@ -1,0 +1,4 @@
+John Doe,30,Engineering,john.doe@example.com,60000
+Jane Smith,25,Marketing,jane.smith@example.com,50000
+Emily Johnson,40,Finance,emily.johnson@example.com,70000
+Michael Brown,35,Sales,michael.brown@example.com,55000
