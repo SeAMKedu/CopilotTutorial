@@ -126,6 +126,78 @@ def main():
     print('Total population:', total_population)
 ```
 
+## Copilot Chat yleisiin ohjelmointikysymyksiin
+
+Copilot Chatiltä voi kysyä yleisiä ohjelmointiin liittyviä kysymyksiä. Saat avattua Copilot Chat -keskusteluikkunan sivulle painamalla Ctrl-Alt-I tai valitsemalla sen ylhäältä valikosta:
+
+![](images/opencopilotchat.png)
+
+Chat-ikkuna ilmestyy ikkunan oikeaan reunaan. Kehotteen voi kirjoittaa ikkunan alareunassa olevaan tekstikenttään.
+
+Kysytään, miten ohjelmaa pitäisi muokata, jos kaupunkien tallentamiseen käytetään olioita sanakirjan sijaan. Maalaa city-sanakirja ja avaa Chat-ikkuna. Anna seuraava kehote Chat-ikkunan alaosassa:
+Kirjoita seuraava ohje kehotekenttään:
+```
+Use object of a class here instead of dictionary. 
+```
+
+![](images/chatclassobject.png)
+
+Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot saattaa kertoa myös, mitä muutoksia reademployees.py-tiedostoon täytyy tähdä. Näin ei kuitenkaan nyt jäynyt, eli tehdään nyt vain City-luokka ja muutetaan reademployees.py-tiedostoa myöhemmin.
+
+Tee uusi tiedosto city.py ja kopioi sinne Copilot Chatin ehdottama koodi:
+```python
+# city.py
+class City:
+    def __init__(self, name, region, population, latitude, longitude):
+        self.name = name
+        self.region = region
+        self.population = int(population)
+        self.latitude = float(latitude)
+        self.longitude = float(longitude)
+```
+
+Pyydetään vielä Copilotia ohjeistamaan, mitä pitää huomioida, jos City-luokka tehdään erilliseen tiedostoon:
+Kirjoita seuraava ohje kehotekenttään:
+```
+Define the City class to separate file 
+```
+
+Copilot Chat kertoo, että readcities.py-tiedoston alkuun kirjoitetaan:
+```python
+from city import City 
+```
+
+Avaa readcities.py ja lisää edellä mainittu import-lause. Maalaa sitten kaikki koodi readcities.py-tiedostosta. Avaa seuraavaksi Inline Chat ja anna sille kehote:
+```
+Use objects of city class instead of dictionary
+```
+
+![](modifyreadcities.png)
+
+Hyväksy muutokset. Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Lisää se City-luokkaan tekoälyn avulla.
+
+```python
+# __str__ method is used to return a string representation of the object.
+    def __str__(self):
+        return f'{self.name} ({self.region}): {self.population}'
+```
+
+## Muutokset useampaan tiedostoon
+
+Uuden toiminnallisuuden tekeminen kohdistuu usein useampaan tiedostoon. Pyydetään Copilotia muokkaamaan ohjelmaa siten, että laskee etäisyyden ensimmäisen kaupungin ja kaikkien muiden kaupunkien välillä. Etäisyyden laskeva funktio sijoitetaan City-luokkaan.
+
+Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla sille ohjelman kontekstin. Kirjoita kehotteeseen ensin @workspace ja sitten tiedoston nimet #-merkillä alkaen:
+
+```
+@workspace #city.py #readcities.py Add function distance to the City class which calculates the distance between this city and another city. In the main program claculate the distance between the first city and other cities
+
+```
+Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Joudut kopioimaan muuttuneet kohdat käsin (tai tiedostot kokonaisuudessaan).
+
+Toinen vaihtoehto on käyttää Copilot Edits -ikkunaa, jolle määritellään tiedostot, jota muutokset koskevat. Copilot Edits osaa tehdä tarvittavat muutokset suoraan näihin tiedostoihin. Tätä kirjoitettaessa Copilot Edits on vasta Preview-vaiheessa ja ehdotetut koodilisäykset eivät ole välttämättä kovin luotettavia. Kannattaa kuitenkin kokeilla!
+
+Huomaa, että GitHub Copilot voi antaa eri kerroilla erilaisia koodiehdotuksia ja promptaamisen tarkentamisen tarve voi vaihdella. Copilot "oppii" koulutehtävät nopeasti ja yleisimmissä koulutehtävissä saattaa riittää, että kirjoittaa vain vähän ohjelman alkua.
+
 ## Yleistä GitHub Copilotista
 
 GitHub Copilot on tekoälyyn pohjautuva ohjelmointityökalu, joka osaa tehdä ja täydentää ohjelmakoodia. Copilotille kuvataan ohjelmointitehtävä luonnollisella kielellä ja se tuottaa ratkaisun annettuun tehtävään valitulla ohjelmointikielellä. Haluttu uusi ohjelman toiminto voidaan kuvata esimerkiksi syöteikkunassa tai kuvaus voidaan kirjoittaa ohjelmakoodin kommentteihin. Copilot osaa myös ehdottaa seuraavia koodirivejä samalla, kun ohjelmoija kirjoittaa ohjelmakoodia. Tekoälyn avulla tuotetut koodin täydennykset auttavat ohjelmistokehittäjää etenkin vaikeasti muistettavien yksityiskohtien ohjelmoinnissa, ja ohjelmistokehittäjä voi keskittyä haastavampiin ohjelmistotehtäviin. Copilot toimii muun muassa Visual Studio Code (VS Code) -kehitystyökalussa.
