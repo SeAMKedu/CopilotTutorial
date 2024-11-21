@@ -2,40 +2,56 @@
 
 ## Sisältö
 
-Tässä oppaassa kerrotaan, miten GitHub Copilotia käytetään Visual Studio Codessa. Esimerkeissä käytetään Python- ja Java-ohjelmointikieliä. Oppaassa kerrotaan seuraavista Copilotin käyttöön liittyvistä asioista:
+Tässä oppaassa kerrotaan, miten GitHub Copilotia käytetään Visual Studio Codessa. Oppaassa kerrotaan seuraavista Copilotin käyttöön liittyvistä asioista:
 - Miten koodiehdotukset saa editoriin ja miten niitä hyödynnetään
-- Miten käytetään chat-keskusteluja koodin refaktorointiin
+- Miten käytetään chat-keskusteluja koodin refaktorointiin ja selittämiseen
 - Miten korjataan virheitä
+- Miten käsitellään useampaan tiedostoon kohdistuvia muutosehdotuksia
 
-## Mallidatan generointi Inline Chatin avulla
+GitHub Copilot on tekoälyyn pohjautuva ohjelmointityökalu, joka osaa luoda ja täydentää ohjelmakoodia. Copilotille kuvataan ohjelmointitehtävä luonnollisella kielellä ja se tuottaa ratkaisun annettuun tehtävään valitulla ohjelmointikielellä. Haluttu uusi ohjelman toiminto voidaan kuvata esimerkiksi Chat-ikkunassa tai kuvaus voidaan kirjoittaa ohjelmakoodin kommentteihin. Copilot osaa myös ehdottaa seuraavia koodirivejä samalla, kun ohjelmoija kirjoittaa ohjelmakoodia. Tekoälyn avulla tuotetut koodin täydennykset auttavat ohjelmistokehittäjää etenkin vaikeasti muistettavien yksityiskohtien ohjelmoinnissa, ja ohjelmistokehittäjä voi keskittyä haastavampiin ohjelmistotehtäviin. Copilot toimii muun muassa Visual Studio Codessa (VS Code).
 
-Tehdään GitHub Copilotin avulla ohjelma, joka lukee tiedostosta dataa Suomen suurimmista kaupungeista. Ohjelma järjestää kaupungit eri parametrien mukaan.
+Copilotia markkinoidaan tekoälypohjaisena pariohjelmoijana, jolta voi kysyä ohjeita ohjelmointityön aikana. Copilotia voi pyytää selittämään annettua ohjelmakoodia tai virheilmoituksia. Virhetilanteissa se selittää ongelman ja antaa korjausehdotuksen. Copilot on myös hyödyllinen yksikkötestien laatimisessa. Työkalu osaa generoida suurempia koodikokonaisuuksia, jotka jakaantuvat useisiin ohjelmistomoduuleihin. Copilot toimii parhaiten, kun sille on annettu tietoa kehitettävän ohjelman kontekstista. Käytännössä tämä tarkoittaa sitä, että Copilotille kerrotaan, mitä ohjelmakoodia sen tulee huomioida koodiehdotuksia varten.
 
-Tietoja kaupungeista voitaisiin hakea esimerkiksi Tilastokeskuksen sivuilta. Tehdään tekstitiedosto kaupungeista nyt kuitenkin tekoälyn avulla.
+Tämä opas on tarkoitettu aloittelevalle GitHub Copilotin käyttäjälle, jolla on jo ohjelmoinnin perustaidot. Esimerkeissä käytetään Python-ohjelmointikieltä, mutta oppaassa kuvattuja menetelmiä voi soveltaa myös muilla ohjelmointikielillä.
 
-Tee VS Codella tiedosto cities.txt. VS Coden editori tarjoaa heti tekoälyavustinta käyttöön. Paina Ctrl+I, kuten VS Code ehdottaa.
+## GitHub Copilotin asentaminen VS Codeen
+
+## Inline Chat
+
+Kun luot uuden tiedoston VS Codella, tarjoaa editori heti mahdollisuutta tekoälyavustimen käyttöä. Avustimen saa päälle painamalla Ctrl+I, kuten VS Code ehdottaa.
 
 ![](images/firstinlinechat.png)
 
-Näyttöön avautuvassa ikkunassa (Inline Chat) voi antaa koodiehdotuksia. Tällä kertaa pyydämme tekoälyä tekemään listan 30 suurimmasta kaupungista. Voit pyytää tekoälyä tekemään listan esimerkiksi näin:
+Tätä ohjelmakoodin lomaan aukeavaa avustusikkunaa kutsutaan Inline Chatiksi. Keskustelua tekoälyn kanssa voi käydä, myös Chat-ikkunassa, joka avautuu ruudun oikealle puolelle omaan ikkunaansa. Chat-ikkunan saa päälle painamalla Ctrl-Alt-I tai ikkunan ylöosassa olevasta valikosta.
+
+![](images/opencopilotchat.png)
+
+Tutustutaan ensin Inline Chatiin tekemällä yksinkertainen esimerkkisovellus Copilotin avulla. Sovelluksemme lukee tiedostosta dataa Suomen suurimmista kaupungeista. Ohjelma järjestää kaupungit eri parametrien mukaan ja käsittelee kaupunkeja alueittain.
+
+### Mallidatan generointi Inline Chatin avulla
+
+Tehdään ensin tekstitiedosto kaupungeista tekoälyn avulla. Oikea tapa tuottaa tiedosto olisi tietenkin hakea tiedot luotettavasta lähteestä. Tässä harjoitustehtävässä tekoälyn tuottamat tiedot kelpaavat kuitenkin.
+
+Tee VS Codella tiedosto cities.txt. VS Coden editori tarjoaa heti tekoälyavustinta käyttöön. Paina Ctrl+I, kuten VS Code ehdottaa. Näyttöön avautuvassa ikkunassa Inline Chat-ikkunassa voi antaa koodiehdotuksia. Tällä kertaa pyydämme tekoälyä kuitenkin generoimaan dataa tekstimuodossa.
+
+Pyydä tekoälyä tekemään listan Suomen 30 suurimmasta kaupungista esimerkiksi näin:
 
 ![](images/secondinlinechat.png)
 
 Paina oikeassa reunassa olevaa nuolinäppäintä ja Copilot generoi tiedot.
 
-Lista ei ole välttämättä vielä haluamassamme muodossa. Esimerkiksi alueiden nimet voivat olla osin englanninkielisiä. Voit tarkentaa kehotetta eli promptia ja generoida listan kaupungeista uudestaan. Voit antaa kehotteen myös suomeksi, mutta englanninkieliset kehotteet toimivat usein paremmin.
+Lista ei ole välttämättä vielä haluamassasi muodossa. Esimerkiksi alueiden nimet voivat olla osin englanninkielisiä. Voit tarkentaa kehotetta eli promptia ja generoida listan kaupungeista uudestaan. Voit antaa kehotteen myös suomeksi, mutta englanninkieliset kehotteet toimivat usein paremmin.
 
 ![](images/fileofcities.png)
 
 Kun kaupunkien tiedot ovat haluamassasi muodossa, paina Accept. Poista otsikkorivi alusta ja tallenna tiedosto.
 
-Huomaa, että listassa olevat kaupunkien tiedot ovat epäluotettavia. Käytimme Copilotia nyt vain mallidatan luomiseksi.
+### Ohjelmakoodin generoiminen Inline Chatin avulla
 
-## Ohjelmakoodin generointi Inline Chatin avulla
-
-Pyydetään Copilotia nyt generoimaan Python-ohjelma, joka lukee cities.txt-tiedoston ja tekee kaupungeista listan olioita (käytetään sanakirja-tietorakennetta).
+Pyydetään Copilotia nyt generoimaan Python-ohjelma, joka lukee cities.txt-tiedoston ja tekee kaupungeista listan olioita (käytetään luokkien ja olioiden sijaan sanakirja-tietorakennetta).
 
 Tee uusi tiedosto readcities.py ja avaa Inline Chat. Kokeile seuraavaa promptia:
+
 ```
 Make a program, which reads the file cities.txt. The program creates a list of city dictionaries.
 ```
@@ -45,7 +61,7 @@ Copilot ei välttämättä osaa huomioida tiedoston cities.txt kenttiä. Prompti
 Make a program, which reads the file cities.txt. The program creates a list of city dictionaries. Each row in the file contains the following fields: name, region, population, latitude and longitude.
 ```
 
-Copilot ei välttämättä tuota hyvää ohjelmakoodia heti. Joskus Inline Chat ikkunan sulkeminen ja uudelleen yrittäminen saattaa auttaa. Promptausta voi myös edelleen tarkentaa.
+Copilot ei tuota aina hyvää ohjelmakoodia. Joskus Inline Chat ikkunan sulkeminen ja uudelleen yrittäminen saattaa auttaa. Promptausta voi myös edelleen tarkentaa.
 
 Ohjelmakoodin pitäisi näyttää nyt suurin piirtein tältä:
 
@@ -95,9 +111,9 @@ if __name__ == "__main__":
     main()
 ```
 
-## Automaattinen koodin täydennys
+### Automaattinen koodin täydennys
 
-Olet jo ehkä huomannut, että Copilot ehdottaa kooditäydennyksiä pyytämättäkin. Nämä ehdotukset näkyvät editorissa harmaana ja ne voi hyväksyä tabulaattorilla.
+Olet ehkä jo huomannut, että Copilot ehdottaa kooditäydennyksiä pyytämättäkin. Nämä ehdotukset näkyvät editorissa harmaana ja ne voi hyväksyä tabulaattorilla.
 
 Koodiin kirjoitettuja kommentteja voi käyttää myös Copilotin kehotteena Inline Chatin sijaan.
 
@@ -107,7 +123,7 @@ Lisää seuraava kommentti main-funktioon:
 
 Hyväksy koodiehdotus painamalla Tab.
 
-Kirjoita vielä kommentti:
+Kirjoita ohjelman loppuun vielä kommentti:
 ```python
 # calculate total population
 ```
@@ -128,21 +144,21 @@ def main():
 
 ## Copilot Chat yleisiin ohjelmointikysymyksiin
 
-Copilot Chatiltä voi kysyä yleisiä ohjelmointiin liittyviä kysymyksiä. Saat avattua Copilot Chat -keskusteluikkunan sivulle painamalla Ctrl-Alt-I tai valitsemalla sen ylhäältä valikosta:
+Inline Chat sopii hyvin lyhyiden ohjelman osien tekemiseen. Sen sijaan yleisiä ohjelmointiin liittyviä kysymyksiä on parempi kysyä Copilot Chatiltä. Saat avattua Copilot Chat -keskusteluikkunan painamalla Ctrl-Alt-I tai valitsemalla sen ylhäältä valikosta:
 
 ![](images/opencopilotchat.png)
 
 Chat-ikkuna ilmestyy ikkunan oikeaan reunaan. Kehotteen voi kirjoittaa ikkunan alareunassa olevaan tekstikenttään.
 
 Kysytään, miten ohjelmaa pitäisi muokata, jos kaupunkien tallentamiseen käytetään olioita sanakirjan sijaan. Maalaa city-sanakirja ja avaa Chat-ikkuna. Anna seuraava kehote Chat-ikkunan alaosassa:
-Kirjoita seuraava ohje kehotekenttään:
+
 ```
 Use object of a class here instead of dictionary. 
 ```
 
 ![](images/chatclassobject.png)
 
-Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot saattaa kertoa myös, mitä muutoksia reademployees.py-tiedostoon täytyy tähdä. Näin ei kuitenkaan nyt jäynyt, eli tehdään nyt vain City-luokka ja muutetaan reademployees.py-tiedostoa myöhemmin.
+Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot saattaa kertoa myös, mitä muutoksia reademployees.py-tiedostoon täytyy tähdä. Näin ei kuitenkaan nyt käynyt, eli tehdään nyt vain City-luokka ja muutetaan reademployees.py-tiedostoa myöhemmin.
 
 Tee uusi tiedosto city.py ja kopioi sinne Copilot Chatin ehdottama koodi:
 ```python
@@ -158,6 +174,7 @@ class City:
 
 Pyydetään vielä Copilotia ohjeistamaan, mitä pitää huomioida, jos City-luokka tehdään erilliseen tiedostoon:
 Kirjoita seuraava ohje kehotekenttään:
+
 ```
 Define the City class to separate file 
 ```
@@ -182,7 +199,7 @@ Hyväksy muutokset. Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttu
         return f'{self.name} ({self.region}): {self.population}'
 ```
 
-## Muutokset useampaan tiedostoon
+## Muutokset useampaan tiedostoon Copilot Chatin avulla
 
 Uuden toiminnallisuuden tekeminen kohdistuu usein useampaan tiedostoon. Pyydetään Copilotia muokkaamaan ohjelmaa siten, että laskee etäisyyden ensimmäisen kaupungin ja kaikkien muiden kaupunkien välillä. Etäisyyden laskeva funktio sijoitetaan City-luokkaan.
 
@@ -194,6 +211,8 @@ Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla s
 ```
 Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Muutokset voi kopioida ohjelmakooditiedostoon painamalla Chatin koodi-ikkunan yläosassa olevaa Apply in Editor -symbolia tai kopioimalla koodin käsin. Chatin koodi-ikkunan yläsosassa on myös symboli Insert at Cursor, joka mahdollistaa generoidun koodin lisäämisen kursorin kohtaan ohjelmakooditiedostossa.
 
+## Muutokset useampaan tiedostoon Copilot Edits -työkalulla
+
 Toinen vaihtoehto on käyttää Copilot Edits -ikkunaa, jolle määritellään tiedostot, jota muutokset koskevat. Copilot Edits osaa tehdä tarvittavat muutokset suoraan näihin tiedostoihin. Tätä kirjoitettaessa Copilot Edits on vasta Preview-vaiheessa ja ehdotetut koodilisäykset eivät ole välttämättä kovin luotettavia. Kannattaa kuitenkin kokeilla!
 
 ![Copilot Edits](copilotedits1.png)
@@ -201,10 +220,6 @@ Toinen vaihtoehto on käyttää Copilot Edits -ikkunaa, jolle määritellään t
 Huomaa, että GitHub Copilot voi antaa eri kerroilla erilaisia koodiehdotuksia ja promptaamisen tarkentamisen tarve voi vaihdella. Copilot "oppii" koulutehtävät nopeasti ja yleisimmissä koulutehtävissä saattaa riittää, että kirjoittaa vain vähän ohjelman alkua.
 
 ## Yleistä GitHub Copilotista
-
-GitHub Copilot on tekoälyyn pohjautuva ohjelmointityökalu, joka osaa tehdä ja täydentää ohjelmakoodia. Copilotille kuvataan ohjelmointitehtävä luonnollisella kielellä ja se tuottaa ratkaisun annettuun tehtävään valitulla ohjelmointikielellä. Haluttu uusi ohjelman toiminto voidaan kuvata esimerkiksi syöteikkunassa tai kuvaus voidaan kirjoittaa ohjelmakoodin kommentteihin. Copilot osaa myös ehdottaa seuraavia koodirivejä samalla, kun ohjelmoija kirjoittaa ohjelmakoodia. Tekoälyn avulla tuotetut koodin täydennykset auttavat ohjelmistokehittäjää etenkin vaikeasti muistettavien yksityiskohtien ohjelmoinnissa, ja ohjelmistokehittäjä voi keskittyä haastavampiin ohjelmistotehtäviin. Copilot toimii muun muassa Visual Studio Code (VS Code) -kehitystyökalussa.
-
-Copilotia markkinoidaan tekoälypohjaisena pariohjelmoijana, jolta voi kysyä ohjeita ohjelmointityön aikana. Sitä voi pyytää selittämään annettua ohjelmakoodia tai virheilmoituksia. Virhetilanteissa se selittää ongelman ja antaa korjausehdotuksen. Copilot on myös hyödyllinen yksikkötestien laatimisessa. Työkalu osaa generoida suurempia koodikokonaisuuksia, jotka jakaantuvat useisiin ohjelmistomoduuleihin. Copilot toimii parhaiten, kun sille on annettu tietoa kehitettävän ohjelman kontekstista. Käytännössä tämä tarkoittaa sitä, että Copilotille kerrotaan, mitä ohjelmakoodia sen tulee huomioida koodiehdotuksia varten.
 
 Useimmat ohjelmistokehittäjät käyttää nykyään GitHub Copilotia tai vastaavaa tekoälypohjaista ohjelmointityökalua. Ohjelmointityössä täytyy jatkuvasti hakea tietoa esimerkiksi ohjelmistokirjastojen ja rajapintojen käytöstä. Ohjelmistokehittäjät käyttävät myös useita ohjelmointikieliä ja sovelluskehyksiä, ja näihin liittyvien yksityiskohtien muistaminen ei ole mielekästä eikä edes mahdollista. Tekoälypohjaiset koodiavustajat nopeuttavat usein tiedonhankintaa web-sivujen selaamiseen verrattuna.
 
