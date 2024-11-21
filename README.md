@@ -192,9 +192,11 @@ Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla s
 @workspace #city.py #readcities.py Add function distance to the City class which calculates the distance between this city and another city. In the main program claculate the distance between the first city and other cities
 
 ```
-Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Joudut kopioimaan muuttuneet kohdat käsin (tai tiedostot kokonaisuudessaan).
+Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Muutokset voi kopioida ohjelmakooditiedostoon painamalla Chatin koodi-ikkunan yläosassa olevaa Apply in Editor -symbolia tai kopioimalla koodin käsin. Chatin koodi-ikkunan yläsosassa on myös symboli Insert at Cursor, joka mahdollistaa generoidun koodin lisäämisen kursorin kohtaan ohjelmakooditiedostossa.
 
 Toinen vaihtoehto on käyttää Copilot Edits -ikkunaa, jolle määritellään tiedostot, jota muutokset koskevat. Copilot Edits osaa tehdä tarvittavat muutokset suoraan näihin tiedostoihin. Tätä kirjoitettaessa Copilot Edits on vasta Preview-vaiheessa ja ehdotetut koodilisäykset eivät ole välttämättä kovin luotettavia. Kannattaa kuitenkin kokeilla!
+
+![Copilot Edits](copilotedits1.png)
 
 Huomaa, että GitHub Copilot voi antaa eri kerroilla erilaisia koodiehdotuksia ja promptaamisen tarkentamisen tarve voi vaihdella. Copilot "oppii" koulutehtävät nopeasti ja yleisimmissä koulutehtävissä saattaa riittää, että kirjoittaa vain vähän ohjelman alkua.
 
