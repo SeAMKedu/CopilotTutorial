@@ -185,13 +185,16 @@ from city import City
 ```
 
 Avaa readcities.py ja lisää edellä mainittu import-lause. Maalaa sitten kaikki koodi readcities.py-tiedostosta. Avaa seuraavaksi Inline Chat ja anna sille kehote:
+
 ```
 Use objects of city class instead of dictionary
 ```
 
 ![](modifyreadcities.png)
 
-Hyväksy muutokset. Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Lisää se City-luokkaan tekoälyn avulla.
+Hyväksy muutokset.
+
+Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Lisää se City-luokkaan tekoälyn avulla.
 
 ```python
 # __str__ method is used to return a string representation of the object.
@@ -203,28 +206,78 @@ Hyväksy muutokset. Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttu
 
 Uuden toiminnallisuuden tekeminen kohdistuu usein useampaan tiedostoon. Pyydetään Copilotia muokkaamaan ohjelmaa siten, että laskee etäisyyden ensimmäisen kaupungin ja kaikkien muiden kaupunkien välillä. Etäisyyden laskeva funktio sijoitetaan City-luokkaan.
 
-Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla sille ohjelman kontekstin. Kirjoita kehotteeseen ensin @workspace ja sitten tiedoston nimet #-merkillä alkaen:
+Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla sille ohjelman kontekstin. Kirjoita kehotteeseen ensin @workspace ja sitten tiedoston nimet #-merkkien perään:
 
 ```
-@workspace #city.py #readcities.py Add function distance to the City class which calculates the distance between this city and another city. In the main program claculate the distance between the first city and other cities
+@workspace #city.py #readcities.py Add function distance to the City class which calculates the distance between this city and another city. In the main program calculate the distance between the first city and other cities
 
 ```
-Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Muutokset voi kopioida ohjelmakooditiedostoon painamalla Chatin koodi-ikkunan yläosassa olevaa Apply in Editor -symbolia tai kopioimalla koodin käsin. Chatin koodi-ikkunan yläsosassa on myös symboli Insert at Cursor, joka mahdollistaa generoidun koodin lisäämisen kursorin kohtaan ohjelmakooditiedostossa.
+Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Muutokset voi kopioida ohjelmakooditiedostoon painamalla Chatin koodi-ikkunan yläosassa olevaa Apply in Editor -symbolia.
+
+![](ApplyInEditor.png)
+
+Avaa city.py ja paina Apply in Editor -symbolia.
+
+![](ApplyInEditorAccept.png)
+
+Copilot lisäsi koodin city.py -tiedostoon korostusvärillä. Paina Accept Changes -painiketta hyväksyeksesi muutokset.
+
+Seuraava symboli työkalurivissä on Insert at Cursor, jolla voit lisätä generoidun koodin kursorin kohtaan ohjelmakooditiedostossa. Kolmen pisteen takaa löytyy myös toiminto, jolla voit lisätä generoidun koodin uuteen tiedostoon.
 
 ## Muutokset useampaan tiedostoon Copilot Edits -työkalulla
 
-Toinen vaihtoehto on käyttää Copilot Edits -ikkunaa, jolle määritellään tiedostot, jota muutokset koskevat. Copilot Edits osaa tehdä tarvittavat muutokset suoraan näihin tiedostoihin. Tätä kirjoitettaessa Copilot Edits on vasta Preview-vaiheessa ja ehdotetut koodilisäykset eivät ole välttämättä kovin luotettavia. Kannattaa kuitenkin kokeilla!
+Toinen vaihtoehto tehdä muutoksia useampaa tiedostoon on käyttää Copilot Edits -ikkunaa. Copilot Editsille määritellään tiedostot, jota muutokset koskevat. Copilot Edits osaa tehdä tarvittavat muutokset suoraan näihin tiedostoihin. Tätä kirjoitettaessa Copilot Edits on vasta Preview-vaiheessa ja ehdotetut koodilisäykset eivät ole välttämättä luotettavia.
 
-![Copilot Edits](copilotedits1.png)
+Avaa Copilot Edits valikosta tai painamalla Ctrl-Shift-I.
 
-Huomaa, että GitHub Copilot voi antaa eri kerroilla erilaisia koodiehdotuksia ja promptaamisen tarkentamisen tarve voi vaihdella. Copilot "oppii" koulutehtävät nopeasti ja yleisimmissä koulutehtävissä saattaa riittää, että kirjoittaa vain vähän ohjelman alkua.
+![](copilotedits1.png)
 
-## Yleistä GitHub Copilotista
+Copilot Edits avautuu ikkunan oikealle puolelle.
+
+![](edits.png)
+
+Lisätään ohjelmaan kaupunkien pinta-alojen käsittely.
+
+Lisää tiedostot readcities.py, city.py ja cities.txt Editsille (+Add Files). Voit myös raahata tiedostot VS Coden explorer-listasta Copilot Editsin ikkunaan. 
+
+Anna seuraavaksi Copilot Editsille kehote:
+
+```
+Add handling of the area (in square kilometers) of the cities to the program.
+
+```
+
+![](editsfiles.png)
+
+Paina sitten nuolinäppäintä kehotekentässä.
+
+Copilots Edits generoi nyt muutosehdotukset eri tiedostoihin ja näyttää muutokset korostusväreillä.
+
+![](editsdone.png)
+
+Voit hyväksyä kaikki muutokset kerralla painamalla Accept Copilot Edits -listassa. On kuitenkin parempi tarkistaa muutokset ja hyväksyä ne yksi kerrallaan valitsemalla tiedoston listasta. Kukin muutettu tiedosto täytyy vielä tallentaa.
+
+Testaa nyt ohjelma ajamalla se.
+
+Tehdään vielä toinen kokeilu Copilot Editsillä. Siirretään kaupunkien välinen etäisyyksien laskenta luokasta City staattiseksi funktioksi omaan tiedostoonsa.
+
+Anna seuraava kehote:
+
+```
+Move the distance calcution from the city class to a static funtion in a separate file
+
+```
+
+Copilot Edits kertoo poistaneensa distance-metodin luokasta City ja lisänneensä uuden tiedoston distance.py, jossa on etäisyyksien laskenta. Lisäksi Copilot kertoi päivittäneensä main-funktiota niin, että se käyttää uutta metodia.
+
+Huomaa, että GitHub Copilot voi antaa eri kerroilla erilaisia koodiehdotuksia ja promptaamisen tarkentamisen tarve voi vaihdella. Copilot "oppii" koulutehtävät nopeasti ja yleisimmissä koulutehtävissä saattaa riittää, että kirjoittaa vain vähän ohjelman alkua. Koulutehtävissä Copilot arvaa usein ehkä hieman liiankin helposti, mitä aiot seuraavaksi tehdä.
+
+## Muutamia huomioita tekoälyavustinten käytöstä ohjelmoinnissa
 
 Useimmat ohjelmistokehittäjät käyttää nykyään GitHub Copilotia tai vastaavaa tekoälypohjaista ohjelmointityökalua. Ohjelmointityössä täytyy jatkuvasti hakea tietoa esimerkiksi ohjelmistokirjastojen ja rajapintojen käytöstä. Ohjelmistokehittäjät käyttävät myös useita ohjelmointikieliä ja sovelluskehyksiä, ja näihin liittyvien yksityiskohtien muistaminen ei ole mielekästä eikä edes mahdollista. Tekoälypohjaiset koodiavustajat nopeuttavat usein tiedonhankintaa web-sivujen selaamiseen verrattuna.
 
-Toisaalta monet ovat huolissaan tekoälypohjaisten työkalujen vaikutuksesta ohjelmistojen laatuun. Kielimallien ongelma ohjelmistokehityksessä on, että niiden on vaikea ”hahmottaa” suuria useisiin tiedostoihin jakautuneita ohjelmistoprojekteja. Copilot ei selviydy vielä kovin hyvin tilanteesta, jossa uuden toiminnon lisääminen ohjelmaan vaatii muutoksia useisiin tiedostoihin. Myös ohjelmistokoodin uudelleenkäytössä on puutteita, koska kielimallit eivät osaa nykyisellään yleistää koodia. Tutkimuksissa on havaittu, että ohjelmakoodin uudelleenkäyttö on vähentynyt AI-työkalujen yleistyttyä. 
+Toisaalta monet ovat huolissaan tekoälypohjaisten työkalujen vaikutuksesta ohjelmistojen laatuun. Kielimallien ongelma ohjelmistokehityksessä on ollut, että niiden on vaikea ”hahmottaa” suuria useisiin tiedostoihin jakautuneita ohjelmistoprojekteja. Aiemmissa tutkimuksissa on havaittu, että kielimallit eivät osaa yleistää koodia kovin hyvin ja ohjelmakoodin uudelleenkäytössä on ollut puutteita. Näiden tutkimusten mukaan ohjelmakoodin uudelleenkäyttö on vähentynyt AI-työkalujen yleistyttyä. Tekoälypohjaiset koodiavustimet kehittyvät kuitenkin nopeasti ja esimerkiksi Copilot Edits on tuomassa tähän parannusta.
 
-Kielimallit tuottavat varsin hyviä vastauksia melkein mihin vain tyypillisiin koulutehtäviin, joita esiintyy esimerkiksi lukioissa ja korkeakoulujen perusopinnoissa. Ohjelmoinnissa tilanne on sama kuin muissa aineissa. ChatGPT ja Copilot osaavat ratkaista suurimman osan ohjelmoinnin peruskurssien tehtävistä pelkän tehtävänannon perusteella. 
+Kielimallit tuottavat varsin hyviä vastauksia melkein mihin vain tyypillisiin koulutehtäviin, joita esiintyy esimerkiksi korkeakoulujen perusopinnoissa. Ohjelmoinnissa tilanne on sama kuin muissa aineissa. ChatGPT ja GitHub Copilot osaavat ratkaista suurimman osan ohjelmoinnin peruskurssien tehtävistä pelkän tehtävänannon perusteella. 
 
  Monet ohjelmoinnin opettajat ovat sitä mieltä, että opiskelijan ei kannattaisi käyttää tekoälyä ohjelmoinnin peruskurssien opiskelussa. Esimerkiksi Helsingin yliopiston suositussa Full Stack open -opiskelumateriaalissa annetaan suositus, että opiskelija kytkee Copilotin pois päältä ja turvautuu siihen ainoastaan silloin, kun muu ei auta. Tekoälyn olemassaoloa ei voi kuitenkaan piilottaa edes ohjelmoinnin perusteiden opiskelijoilta. Alkeisopinnoissakin tekoälystä voi olla opiskelijalle hyötyä esimerkiksi ohjelmakoodin selittäjänä. Kun ohjelmoinnin perustaidot ovat hallussa, tekoälypohjaisten koodiavustinten tehokasta käyttöä on myös syytä opiskella. Ohjelmoijan on osattava tuottaa itse algoritmeja, vaikka ne saakin generoitua helposti tekoälyn avulla. Ilman kunnollista ohjelmointiosaamista suunnittelija ei pysty arvioimaan tekoälyn tuottaman koodin oikeellisuutta ja tarkoituksenmukaisuutta.

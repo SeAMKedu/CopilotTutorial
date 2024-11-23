@@ -4,209 +4,239 @@
         "region": "Uusimaa",
         "population": 292913,
         "latitude": 60.2055,
-        "longitude": 24.6559
+        "longitude": 24.6559,
+        "area": 528.03
     },
     {
         "name": "Helsinki",
         "region": "Uusimaa",
         "population": 656229,
         "latitude": 60.1695,
-        "longitude": 24.9354
+        "longitude": 24.9354,
+        "area": 213.75
     },
     {
         "name": "Hyvink\u00c3\u00a4\u00c3\u00a4",
         "region": "Uusimaa",
         "population": 46191,
         "latitude": 60.6338,
-        "longitude": 24.8636
+        "longitude": 24.8636,
+        "area": 336.77
     },
     {
         "name": "H\u00c3\u00a4meenlinna",
         "region": "Kanta-H\u00c3\u00a4me",
         "population": 67995,
         "latitude": 60.995,
-        "longitude": 24.4643
+        "longitude": 24.4643,
+        "area": 2031.52
     },
     {
         "name": "Joensuu",
         "region": "Pohjois-Karjala",
         "population": 76805,
         "latitude": 62.6001,
-        "longitude": 29.7634
+        "longitude": 29.7634,
+        "area": 2751.05
     },
     {
         "name": "Jyv\u00c3\u00a4skyl\u00c3\u00a4",
         "region": "Keski-Suomi",
         "population": 142511,
         "latitude": 62.2426,
-        "longitude": 25.7473
+        "longitude": 25.7473,
+        "area": 1466.35
     },
     {
         "name": "J\u00c3\u00a4rvenp\u00c3\u00a4\u00c3\u00a4",
         "region": "Uusimaa",
         "population": 42743,
         "latitude": 60.4738,
-        "longitude": 25.089
+        "longitude": 25.089,
+        "area": 39.92
     },
     {
         "name": "Kajaani",
         "region": "Kainuu",
         "population": 37531,
         "latitude": 64.2273,
-        "longitude": 27.7285
+        "longitude": 27.7285,
+        "area": 2058.0
     },
     {
         "name": "Kirkkonummi",
         "region": "Uusimaa",
         "population": 39206,
         "latitude": 60.1239,
-        "longitude": 24.4384
+        "longitude": 24.4384,
+        "area": 1017.01
     },
     {
         "name": "Kokkola",
         "region": "Keski-Pohjanmaa",
         "population": 47255,
         "latitude": 63.8385,
-        "longitude": 23.1307
+        "longitude": 23.1307,
+        "area": 1485.0
     },
     {
         "name": "Kotka",
         "region": "Kymenlaakso",
         "population": 52010,
         "latitude": 60.4664,
-        "longitude": 26.9451
+        "longitude": 26.9451,
+        "area": 949.74
     },
     {
         "name": "Kouvola",
         "region": "Kymenlaakso",
         "population": 83318,
         "latitude": 60.8681,
-        "longitude": 26.7042
+        "longitude": 26.7042,
+        "area": 2878.92
     },
     {
         "name": "Kuopio",
         "region": "Pohjois-Savo",
         "population": 119249,
         "latitude": 62.8924,
-        "longitude": 27.677
+        "longitude": 27.677,
+        "area": 3177.52
     },
     {
         "name": "Lahti",
         "region": "P\u00c3\u00a4ij\u00c3\u00a4t-H\u00c3\u00a4me",
         "population": 120093,
         "latitude": 60.9827,
-        "longitude": 25.6615
+        "longitude": 25.6615,
+        "area": 154.58
     },
     {
         "name": "Lappeenranta",
         "region": "Etel\u00c3\u00a4-Karjala",
         "population": 72331,
         "latitude": 61.0583,
-        "longitude": 28.1887
+        "longitude": 28.1887,
+        "area": 1723.5
     },
     {
         "name": "Lohja",
         "region": "Uusimaa",
         "population": 46716,
         "latitude": 60.2485,
-        "longitude": 24.0653
+        "longitude": 24.0653,
+        "area": 1109.73
     },
     {
         "name": "Mikkeli",
         "region": "Etel\u00c3\u00a4-Savo",
         "population": 53582,
         "latitude": 61.6886,
-        "longitude": 27.2724
+        "longitude": 27.2724,
+        "area": 3229.57
     },
     {
         "name": "Nurmij\u00c3\u00a4rvi",
         "region": "Uusimaa",
         "population": 42955,
         "latitude": 60.4644,
-        "longitude": 24.8074
+        "longitude": 24.8074,
+        "area": 367.3
     },
     {
         "name": "Oulu",
         "region": "Pohjois-Pohjanmaa",
         "population": 203750,
         "latitude": 65.0121,
-        "longitude": 25.4651
+        "longitude": 25.4651,
+        "area": 3817.52
     },
     {
         "name": "Pori",
         "region": "Satakunta",
         "population": 83520,
         "latitude": 61.4851,
-        "longitude": 21.7978
+        "longitude": 21.7978,
+        "area": 1703.14
     },
     {
         "name": "Porvoo",
         "region": "Uusimaa",
         "population": 50717,
         "latitude": 60.3932,
-        "longitude": 25.6639
+        "longitude": 25.6639,
+        "area": 2397.22
     },
     {
         "name": "Rauma",
         "region": "Satakunta",
         "population": 39641,
         "latitude": 61.1275,
-        "longitude": 21.5113
+        "longitude": 21.5113,
+        "area": 1111.0
     },
     {
         "name": "Rovaniemi",
         "region": "Lappi",
         "population": 63564,
         "latitude": 66.5039,
-        "longitude": 25.7294
+        "longitude": 25.7294,
+        "area": 8015.52
     },
     {
         "name": "Salo",
         "region": "Varsinais-Suomi",
         "population": 51460,
         "latitude": 60.3833,
-        "longitude": 23.1333
+        "longitude": 23.1333,
+        "area": 2262.0
     },
     {
         "name": "Sein\u00c3\u00a4joki",
         "region": "Etel\u00c3\u00a4-Pohjanmaa",
         "population": 62832,
         "latitude": 62.7903,
-        "longitude": 22.8405
+        "longitude": 22.8405,
+        "area": 1469.0
     },
     {
         "name": "Tampere",
         "region": "Pirkanmaa",
         "population": 238140,
         "latitude": 61.4991,
-        "longitude": 23.7871
+        "longitude": 23.7871,
+        "area": 689.59
     },
     {
         "name": "Turku",
         "region": "Varsinais-Suomi",
         "population": 191603,
         "latitude": 60.4518,
-        "longitude": 22.2666
+        "longitude": 22.2666,
+        "area": 245.67
     },
     {
         "name": "Tuusula",
         "region": "Uusimaa",
         "population": 38873,
         "latitude": 60.403,
-        "longitude": 25.026
+        "longitude": 25.026,
+        "area": 225.46
     },
     {
         "name": "Vaasa",
         "region": "Pohjanmaa",
         "population": 67173,
         "latitude": 63.0951,
-        "longitude": 21.6165
+        "longitude": 21.6165,
+        "area": 191.65
     },
     {
         "name": "Vantaa",
         "region": "Uusimaa",
         "population": 233775,
         "latitude": 60.2941,
-        "longitude": 25.0408
+        "longitude": 25.0408,
+        "area": 240.35
     }
 ]
