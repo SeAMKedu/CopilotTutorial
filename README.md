@@ -248,13 +248,17 @@ Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Muutoks
 
 ![](images/ApplyInEditor.png)
 
-Avaa city.py ja paina Apply in Editor -symbolia.
+Avaa nyt city.py editorin puolella ja vastaava koodi-ikkuna Chatin puolella. Paina sitten Apply in Editor -symbolia. Koodiehdotus tulee nyt editorin puolelle tiedostoon city.py korostusvärillä.
 
 ![](images/ApplyInEditorAccept.png)
 
-Copilot lisäsi koodin city.py -tiedostoon korostusvärillä. Paina Accept Changes -painiketta hyväksyeksesi muutokset.
+Paina Accept Changes -painiketta hyväksyäksesi muutokset.
 
 Seuraava symboli työkalurivissä on Insert at Cursor, jolla voit lisätä generoidun koodin kursorin kohtaan ohjelmakooditiedostossa. Kolmen pisteen takaa löytyy myös toiminto, jolla voit lisätä generoidun koodin uuteen tiedostoon.
+
+Avaa sitten readcities.py editosrissa ja vastaava koodi chat-ikkunassa. Paina sitten Accept Changes -painiketta hyväksyäksesi muutokset.
+
+Tallenna tiedostot city.py ja readcities.py ja aja ohjelma.
 
 ## Muutokset useampaan tiedostoon Copilot Edits -työkalulla
 
