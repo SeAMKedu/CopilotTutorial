@@ -18,7 +18,7 @@ Tämä opas on tarkoitettu aloittelevalle GitHub Copilotin käyttäjälle, jolla
 
 ## GitHub Copilotin asentaminen VS Codeen
 
-GitHub Copilotia varten tarvitaan Visual Studio Code ja GitHub-tili. Asennusohjeet löytyvät [täältä](https://docs.github.com/en/copilot/managing-copilot/configure-personal-settings/installing-the-github-copilot-extension-in-your-environment)
+GitHub Copilotia varten tarvitaan Visual Studio Code ja GitHub-tili. Asennusohjeet löytyvät [täältä](https://docs.github.com/en/copilot/managing-copilot/configure-personal-settings/installing-the-github-copilot-extension-in-your-environment).
 
 Varmista ensin, että sinulla on pääsy GitHub Copilotiin:
 
