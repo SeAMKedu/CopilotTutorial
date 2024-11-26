@@ -22,7 +22,7 @@ GitHub Copilotia varten tarvitaan Visual Studio Code ja GitHub-tili. Asennusohje
 
 Varmista ensin, että sinulla on pääsy GitHub Copilotiin:
 
-
+aa
 
 ## Inline Chat
 
