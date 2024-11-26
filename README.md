@@ -77,9 +77,14 @@ Make a program, which reads the file cities.txt. The program creates a list of c
 ```
 
 Copilot ei välttämättä osaa huomioida tiedoston cities.txt kenttiä. Promptia täytyy todennäköisesti tarkentaa esimerkiksi näin:
+
 ```
 Make a program, which reads the file cities.txt. The program creates a list of city dictionaries. Each row in the file contains the following fields: name, region, population, latitude and longitude.
 ```
+
+Paina nyt nuolinäppäintä. Inline Chat generoi koodiehdotuksen, jonka voit hyväksyä painamalla Accept.
+
+![](images/program.png)
 
 Copilot ei tuota aina hyvää ohjelmakoodia. Joskus Inline Chat ikkunan sulkeminen ja uudelleen avaaminen saattaa auttaa. Promptausta voi myös edelleen tarkentaa.
 
@@ -133,9 +138,11 @@ if __name__ == "__main__":
     main()
 ```
 
+Kokeile taas ajaa ohjelma.
+
 ### Automaattinen koodin täydennys
 
-Olet ehkä jo huomannut, että Copilot ehdottaa kooditäydennyksiä pyytämättäkin. Nämä ehdotukset näkyvät editorissa harmaana ja ne voi hyväksyä tabulaattorilla.
+Olet ehkä jo huomannut, että Copilot ehdottaa kooditäydennyksiä jopa pyytämättäkin. Nämä ehdotukset näkyvät editorissa harmaana ja ne voi hyväksyä tabulaattorilla.
 
 Koodiin kirjoitettuja kommentteja voi käyttää myös Copilotin kehotteena Inline Chatin sijaan.
 
@@ -170,11 +177,13 @@ def main():
 
 Inline Chat sopii hyvin lyhyiden ohjelman osien tekemiseen. Sen sijaan yleisiä ohjelmointiin liittyviä kysymyksiä on parempi kysyä Copilot Chatiltä. Saat avattua Copilot Chat -keskusteluikkunan painamalla Ctrl-Alt-I tai valitsemalla sen ylhäältä valikosta:
 
-![](images/opencopilotchat.png)
+![](images/opencopilotchat1.png)
 
 Chat-ikkuna ilmestyy ikkunan oikeaan reunaan. Kehotteen voi kirjoittaa ikkunan alareunassa olevaan tekstikenttään.
 
-Kysytään, miten ohjelmaa pitäisi muokata, jos kaupunkien tallentamiseen käytetään olioita sanakirjan sijaan. Maalaa city-sanakirja ja avaa Chat-ikkuna. Anna seuraava kehote Chat-ikkunan alaosassa:
+Kysytään, miten ohjelmaa pitäisi muokata, jos kaupunkien tallentamiseen käytetään olioita sanakirjan sijaan.
+
+Maalaa city-sanakirja ja avaa Chat-ikkuna. Anna seuraava kehote Chat-ikkunan alaosassa:
 
 ```
 Use object of a class here instead of dictionary. Define the City class in a separate file. 
@@ -182,7 +191,7 @@ Use object of a class here instead of dictionary. Define the City class in a sep
 
 ![](images/chatclassobject.png)
 
-Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot saattaa kertoa myös, mitä muutoksia readcities.py-tiedostoon täytyy tähdä. Näin ei kuitenkaan nyt käynyt, eli tehdään nyt vain City-luokka ja muutetaan readcities.py-tiedostoa myöhemmin.
+Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot kertoo myös, mitä muutoksia readcities.py-tiedostoon täytyy tähdä.
 
 Aktivoi Chat-ikkunasta koodiehdotus tiedostolle city.py. Chatin koodi-ikkunan oikeaan yläkulmaan ilmestyy valikko, josta voit tehdä koodiehdotukseen liittyviä toimintoja.
 
@@ -203,25 +212,21 @@ class City:
         self.longitude = float(longitude)
 ```
 
-Tiedoston readcities.py osalta Copilot Chat kertoo, että readcities.py-tiedoston alkuun kirjoitetaan:
+Avaa editoriin readcities.py. Aktivoi sitten Chat-ikkunan puolelta koodiehdotus tiedostolle readcities.py.
 
-```python
-from city import City 
-```
+![](images/chatreadcities.png.png)
 
-TÄHÄN UUDET OHJEET
+Valitse Chat-ikkunan readcities.py-koodi-ikkunan valikosta ensimmäinen symboli Apply In Editor.
 
-. Maalaa sitten kaikki koodi readcities.py-tiedostosta. Avaa seuraavaksi Inline Chat ja anna sille kehote:
+![](images/ApplyInEditor.png)
 
-```
-Use objects of city class instead of dictionary
-```
+Editorin puolella näkyy nyt readcities.py-tiedostoon tehdyt muutokset.
 
-![](images/modifyreadcities.png)
+![](images/editionsapplied.png)
 
-Hyväksy muutokset.
+Hyväksy muutokset painamalla Accept Changes. Tallenna tiedosto ja aja ohjelma.
 
-Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Lisää se City-luokkaan tekoälyn avulla.
+Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Lisää se City-luokkaan Inline Chatin avulla. 
 
 ```python
 # __str__ method is used to return a string representation of the object.
