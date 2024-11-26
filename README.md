@@ -26,25 +26,35 @@ Jos olet opiskelija tai opettaja, älä avaa ilmaista kokeilujaksoa. Opiskelijat
 
 Asenna seuraavaksi GitHub Copilot -laajennus Visual Studio Codeen: [GitHub Copilot extension](https://docs.github.com/en/copilot/managing-copilot/configure-personal-settings/installing-the-github-copilot-extension-in-your-environment).
 
+## Esimerkkisovellus
+
+Tutustutaan ensin tekoälyavustimen käyttöön tekemällä yksinkertainen esimerkkisovellus Copilotin avulla. Tehdään sovellus, joka lukee tiedostosta dataa Suomen suurimmista kaupungeista. Ohjelma järjestää kaupungit eri parametrien mukaan ja käsittelee kaupunkeja alueittain.
+
+Harjoituksessa perehdytään ensin Inline Chatin käyttöön. Tämän jälkeen kokeillaan Copilot Chatiä koodin selittämiseen ja yleisiin ohjelmointiin liittyviin kysymyksiin. Lopuksi tutustutaan Copilot Edits- työkaluun, jolla voi tehdä tehokkaasti useampaan tiedostoon kohdistuvia muutoksia.
+
 ## Inline Chat
 
-Kun luot uuden tiedoston VS Codella, tarjoaa editori heti mahdollisuutta tekoälyavustimen käyttöä. Avustimen saa päälle painamalla Ctrl+I, kuten VS Code ehdottaa.
+Kun luot uuden tiedoston VS Codella, tarjoaa editori heti mahdollisuutta Inline Chat -avustimen käyttöön. Inline Chatin saa päälle painamalla Ctrl+I, kuten VS Code ehdottaa.
 
 ![](images/firstinlinechat.png)
 
-Tätä ohjelmakoodin lomaan aukeavaa avustusikkunaa kutsutaan Inline Chatiksi. Keskustelua tekoälyn kanssa voi käydä, myös Chat-ikkunassa, joka avautuu ruudun oikealle puolelle omaan ikkunaansa. Chat-ikkunan saa päälle painamalla Ctrl-Alt-I tai ikkunan ylöosassa olevasta valikosta.
+Inline Chat aukeaa koodieditoriin tiedostokohtaisesti. Tekoälyn avulla käytävä keskustelu kohdistuu siis avoinna olevaan tiedostoon.
+
+Inline Chatin lisäksi keskustelua voi käydä myös tavallisessa Chat-ikkunassa, joka avautuu ruudun oikealle puolelle omaan ikkunaansa. Chat-ikkunan saa päälle painamalla Ctrl-Alt-I tai ikkunan yläosassa olevasta valikosta.
 
 ![](images/opencopilotchat.png)
 
-Tutustutaan ensin Inline Chatiin tekemällä yksinkertainen esimerkkisovellus Copilotin avulla. Sovelluksemme lukee tiedostosta dataa Suomen suurimmista kaupungeista. Ohjelma järjestää kaupungit eri parametrien mukaan ja käsittelee kaupunkeja alueittain.
-
 ### Mallidatan generointi Inline Chatin avulla
 
-Tehdään ensin tekstitiedosto kaupungeista tekoälyn avulla. Oikea tapa tuottaa tiedosto olisi tietenkin hakea tiedot luotettavasta lähteestä. Tässä harjoitustehtävässä tekoälyn tuottamat tiedot kelpaavat kuitenkin.
+Tehdään ensin tekstitiedosto kaupungeista tekoälyn avulla. Oikea tapa tuottaa tiedosto olisi tietenkin hakea tiedot luotettavasta lähteestä. Tekoälyn tuottamat tiedot kelpaavat kuitenkin hyvin tähän harjoitukseen.
 
 Tee VS Codella tiedosto cities.txt. VS Coden editori tarjoaa heti tekoälyavustinta käyttöön. Paina Ctrl+I, kuten VS Code ehdottaa. Näyttöön avautuvassa ikkunassa Inline Chat-ikkunassa voi antaa koodiehdotuksia. Tällä kertaa pyydämme tekoälyä kuitenkin generoimaan dataa tekstimuodossa.
 
-Pyydä tekoälyä tekemään listan Suomen 30 suurimmasta kaupungista esimerkiksi näin:
+Pyydä tekoälyä tekemään listan Suomen 30 suurimmasta kaupungista esimerkiksi seuraavalla kehotteella:
+
+```
+Create a CSV file of 30 largest cities in Finland. Use the following fields: name, region, population, latitude and longitude.
+```
 
 ![](images/secondinlinechat.png)
 
@@ -71,7 +81,7 @@ Copilot ei välttämättä osaa huomioida tiedoston cities.txt kenttiä. Prompti
 Make a program, which reads the file cities.txt. The program creates a list of city dictionaries. Each row in the file contains the following fields: name, region, population, latitude and longitude.
 ```
 
-Copilot ei tuota aina hyvää ohjelmakoodia. Joskus Inline Chat ikkunan sulkeminen ja uudelleen yrittäminen saattaa auttaa. Promptausta voi myös edelleen tarkentaa.
+Copilot ei tuota aina hyvää ohjelmakoodia. Joskus Inline Chat ikkunan sulkeminen ja uudelleen avaaminen saattaa auttaa. Promptausta voi myös edelleen tarkentaa.
 
 Ohjelmakoodin pitäisi näyttää nyt suurin piirtein tältä:
 
@@ -100,16 +110,18 @@ if __name__ == "__main__":
 
 Kun ohjelma on valmis, kokeile ajaa se.
 
-Voit myös myös pyytää Copilotia antamaan koodiehdotusta tiettyyn ohjelman osaan. Muutetaan ohjelmaa siten, että siinä on main-funktio. Maalaa ohjelman loppuosa (if-lause). Valitse Ctrl-I tai paina vasempaan reunaan ilmesteynyttä keltaista symbolia. Valitse sitten Modify using Copilot.
+Voit pyytää Copilotia antamaan koodiehdotusta myös tiettyyn ohjelman osaan. Muutetaan ohjelmaa siten, että siinä on main-funktio. Maalaa ohjelman loppuosa (if-lause). Paina sitten vasempaan reunaan ilmesteynyttä keltaista symbolia ja valitse Modify using Copilot. Vaihtoehtoisesti voit painaa Ctrl-I.
 
 ![](images/mainmethod.png)
 
 Anna Inline Chatille kehote:
+
 ```
 Use main method
 ```
 
 Ohjelman loppuosa näyttää nyt tältä:
+
 ```python
 def main():
     file_path = 'cities.txt'
@@ -134,11 +146,13 @@ Lisää seuraava kommentti main-funktioon:
 Hyväksy koodiehdotus painamalla Tab.
 
 Kirjoita ohjelman loppuun vielä kommentti:
+
 ```python
 # calculate total population
 ```
 
 Hyväksy copilotin ehdotukset tabulaattorilla rivi kerrallaan. Main-funktio on nyt tällainen:
+
 ```python
 def main():
     file_path = 'cities.txt'
@@ -163,14 +177,21 @@ Chat-ikkuna ilmestyy ikkunan oikeaan reunaan. Kehotteen voi kirjoittaa ikkunan a
 Kysytään, miten ohjelmaa pitäisi muokata, jos kaupunkien tallentamiseen käytetään olioita sanakirjan sijaan. Maalaa city-sanakirja ja avaa Chat-ikkuna. Anna seuraava kehote Chat-ikkunan alaosassa:
 
 ```
-Use object of a class here instead of dictionary. 
+Use object of a class here instead of dictionary. Define the City class in a separate file. 
 ```
 
 ![](images/chatclassobject.png)
 
-Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot saattaa kertoa myös, mitä muutoksia reademployees.py-tiedostoon täytyy tähdä. Näin ei kuitenkaan nyt käynyt, eli tehdään nyt vain City-luokka ja muutetaan reademployees.py-tiedostoa myöhemmin.
+Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot saattaa kertoa myös, mitä muutoksia readcities.py-tiedostoon täytyy tähdä. Näin ei kuitenkaan nyt käynyt, eli tehdään nyt vain City-luokka ja muutetaan readcities.py-tiedostoa myöhemmin.
 
-Tee uusi tiedosto city.py ja kopioi sinne Copilot Chatin ehdottama koodi:
+Aktivoi Chat-ikkunasta koodiehdotus tiedostolle city.py. Chatin koodi-ikkunan oikeaan yläkulmaan ilmestyy valikko, josta voit tehdä koodiehdotukseen liittyviä toimintoja.
+
+![](images/newfile.png)
+
+Valitse kolme pistettä ja sitten Insert into New File. Copilot Chat tekee nyt uuden tiedoston city.py ja kopioi koodiehdotuksen sinne. Vaihtoehtoisesti voit tehdä tiedoston city.py itse ja kopioida koodiehdotuksen Chat-ikkunasta sinne.
+
+Tiedoston city.py ohjelmakoodi näyttää nyt tältä:
+
 ```python
 # city.py
 class City:
@@ -182,25 +203,21 @@ class City:
         self.longitude = float(longitude)
 ```
 
-Pyydetään vielä Copilotia ohjeistamaan, mitä pitää huomioida, jos City-luokka tehdään erilliseen tiedostoon:
-Kirjoita seuraava ohje kehotekenttään:
+Tiedoston readcities.py osalta Copilot Chat kertoo, että readcities.py-tiedoston alkuun kirjoitetaan:
 
-```
-Define the City class to separate file 
-```
-
-Copilot Chat kertoo, että readcities.py-tiedoston alkuun kirjoitetaan:
 ```python
 from city import City 
 ```
 
-Avaa readcities.py ja lisää edellä mainittu import-lause. Maalaa sitten kaikki koodi readcities.py-tiedostosta. Avaa seuraavaksi Inline Chat ja anna sille kehote:
+TÄHÄN UUDET OHJEET
+
+. Maalaa sitten kaikki koodi readcities.py-tiedostosta. Avaa seuraavaksi Inline Chat ja anna sille kehote:
 
 ```
 Use objects of city class instead of dictionary
 ```
 
-![](modifyreadcities.png)
+![](images/modifyreadcities.png)
 
 Hyväksy muutokset.
 
@@ -224,11 +241,11 @@ Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla s
 ```
 Copilot Chat kertoo nyt, mitä muutoksia näihin tiedostoihin tarvitaan. Muutokset voi kopioida ohjelmakooditiedostoon painamalla Chatin koodi-ikkunan yläosassa olevaa Apply in Editor -symbolia.
 
-![](ApplyInEditor.png)
+![](images/ApplyInEditor.png)
 
 Avaa city.py ja paina Apply in Editor -symbolia.
 
-![](ApplyInEditorAccept.png)
+![](images/ApplyInEditorAccept.png)
 
 Copilot lisäsi koodin city.py -tiedostoon korostusvärillä. Paina Accept Changes -painiketta hyväksyeksesi muutokset.
 
@@ -240,11 +257,11 @@ Toinen vaihtoehto tehdä muutoksia useampaa tiedostoon on käyttää Copilot Edi
 
 Avaa Copilot Edits valikosta tai painamalla Ctrl-Shift-I.
 
-![](copilotedits1.png)
+![](images/copilotedits1.png)
 
 Copilot Edits avautuu ikkunan oikealle puolelle.
 
-![](edits.png)
+![](images/edits.png)
 
 Lisätään ohjelmaan kaupunkien pinta-alojen käsittely.
 
@@ -257,13 +274,13 @@ Add handling of the area (in square kilometers) of the cities to the program.
 
 ```
 
-![](editsfiles.png)
+![](images/editsfiles.png)
 
 Paina sitten nuolinäppäintä kehotekentässä.
 
 Copilots Edits generoi nyt muutosehdotukset eri tiedostoihin ja näyttää muutokset korostusväreillä.
 
-![](editsdone.png)
+![](images/editsdone.png)
 
 Voit hyväksyä kaikki muutokset kerralla painamalla Accept Copilot Edits -listassa. On kuitenkin parempi tarkistaa muutokset ja hyväksyä ne yksi kerrallaan valitsemalla tiedoston listasta. Kukin muutettu tiedosto täytyy vielä tallentaa.
 
