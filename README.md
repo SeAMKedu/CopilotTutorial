@@ -42,7 +42,7 @@ Inline Chat aukeaa koodieditoriin tiedostokohtaisesti. Tekoälyn avulla käytäv
 
 Inline Chatin lisäksi keskustelua voi käydä myös tavallisessa Chat-ikkunassa, joka avautuu ruudun oikealle puolelle omaan ikkunaansa. Chat-ikkunan saa päälle painamalla Ctrl-Alt-I tai ikkunan yläosassa olevasta valikosta.
 
-![](images/opencopilotchat.png)
+![](images/opencopilotchat1.png)
 
 ### Mallidatan generointi Inline Chatin avulla
 
