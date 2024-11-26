@@ -238,7 +238,7 @@ Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Li
 
 Uuden toiminnallisuuden tekeminen kohdistuu usein useampaan tiedostoon. Pyydetään Copilotia muokkaamaan ohjelmaa siten, että laskee etäisyyden ensimmäisen kaupungin ja kaikkien muiden kaupunkien välillä. Etäisyyden laskeva funktio sijoitetaan City-luokkaan.
 
-Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla sille ohjelman kontekstin. Kirjoita kehotteeseen ensin @workspace ja sitten tiedoston nimet #-merkkien perään:
+Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla sille ohjelman kontekstin. Kirjoita kehotteeseen ensin @workspace ja sitten tiedostojen nimet #-merkkien perään:
 
 ```
 @workspace #city.py #readcities.py Add function distance to the City class which calculates the distance between this city and another city. In the main program calculate the distance between the first city and other cities
