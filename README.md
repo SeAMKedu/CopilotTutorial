@@ -230,7 +230,7 @@ Editorin puolella näkyy nyt readcities.py-tiedostoon tehdyt muutokset.
 
 Hyväksy muutokset painamalla Accept Changes. Tallenna tiedosto ja aja ohjelma.
 
-Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Lisää se City-luokkaan Inline Chatin avulla. 
+Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu ```__str__```-metodi. Lisää se City-luokkaan Inline Chatin avulla. 
 
 ```python
 # __str__ method is used to return a string representation of the object.
@@ -260,7 +260,9 @@ Paina Accept Changes -painiketta hyväksyäksesi muutokset.
 
 Seuraava symboli työkalurivissä on Insert at Cursor, jolla voit lisätä generoidun koodin kursorin kohtaan ohjelmakooditiedostossa. Kolmen pisteen takaa löytyy myös toiminto, jolla voit lisätä generoidun koodin uuteen tiedostoon.
 
-Avaa sitten readcities.py editosrissa ja vastaava koodi chat-ikkunassa. Paina sitten Accept Changes -painiketta hyväksyäksesi muutokset.
+Avaa sitten readcities.py editorissa ja vastaava koodi chat-ikkunassa. Paina sitten Accept Changes -painiketta hyväksyäksesi muutokset.
+
+![](images/distcalcadded.png)
 
 Tallenna tiedostot city.py ja readcities.py ja aja ohjelma.
 
@@ -291,11 +293,13 @@ Add handling of the area (in square kilometers) of the cities to the program.
 
 Paina sitten nuolinäppäintä kehotekentässä.
 
-Copilots Edits generoi nyt muutosehdotukset eri tiedostoihin ja näyttää muutokset korostusväreillä.
+Copilots Edits generoi nyt muutosehdotukset eri tiedostoihin ja näyttää muutokset korostusväreillä. Voit valita käsiteltävän tiedoston listasta.
 
 ![](images/editsdone.png)
 
 Voit hyväksyä kaikki muutokset kerralla painamalla Accept Copilot Edits -listassa. On kuitenkin parempi tarkistaa muutokset ja hyväksyä ne yksi kerrallaan valitsemalla tiedoston listasta. Kukin muutettu tiedosto täytyy vielä tallentaa.
+
+Copilot Edits lisäsi cities.txt uuden sarakkeen pinta-aloja varten. Tiedostoon city.py lisättiin jäsenmuuttuja area konstruktoriin ja ```__str__```-metodiin. Tiedostoon readcities.py tehtiin useita muutoksia, että pinta-alat saadaan luettua tiedostosta.
 
 Testaa nyt ohjelma ajamalla se.
 

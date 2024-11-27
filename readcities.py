@@ -20,12 +20,5 @@ def main():
     total_population = sum(city.population for city in cities)
     print('Total population:', total_population)
 
-    # calculate the distance between the first city and other cities
-    if cities:
-        first_city = cities[0]
-        for city in cities[1:]:
-            distance = first_city.distance(city)
-            print(f'Distance from {first_city.name} to {city.name}: {distance:.2f} km')
-
 if __name__ == "__main__":
     main()
