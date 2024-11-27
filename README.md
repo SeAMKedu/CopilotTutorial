@@ -144,7 +144,7 @@ Olet ehkä jo huomannut, että Copilot ehdottaa kooditäydennyksiä jopa pyytäm
 
 Koodiin kirjoitettuja kommentteja voi käyttää myös Copilotin kehotteena Inline Chatin sijaan.
 
-Lisää kommentti ```python #sort cities by name ``` main-funktioon:
+Lisää kommentti ```#sort cities by name``` main-funktioon:
 
 ![](images/commentexample1.png)
 
@@ -195,9 +195,13 @@ Copilot antaa Chat-ikkunassa City-luokan ohjelmakoodin. Copilot kertoo myös, mi
 
 Aktivoi Chat-ikkunasta koodiehdotus tiedostolle city.py. Chatin koodi-ikkunan oikeaan yläkulmaan ilmestyy valikko, josta voit tehdä koodiehdotukseen liittyviä toimintoja.
 
+![](images/citynewfile.png)
+
+Valitse kolme pistettä ja sitten Insert into New File.
+
 ![](images/newfile.png)
 
-Valitse kolme pistettä ja sitten Insert into New File. Copilot Chat tekee nyt uuden tiedoston city.py ja kopioi koodiehdotuksen sinne. Vaihtoehtoisesti voit tehdä tiedoston city.py itse ja kopioida koodiehdotuksen Chat-ikkunasta sinne.
+Copilot Chat tekee nyt uuden tiedoston city.py ja kopioi koodiehdotuksen sinne. Vaihtoehtoisesti voit tehdä tiedoston city.py itse ja kopioida koodiehdotuksen Chat-ikkunasta sinne.
 
 Tiedoston city.py ohjelmakoodi näyttää nyt tältä:
 
