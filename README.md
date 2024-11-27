@@ -2,10 +2,10 @@
 
 ## Sisältö
 
-Tässä oppaassa kerrotaan, miten GitHub Copilotia käytetään Visual Studio Codessa. Oppaassa kerrotaan seuraavista Copilotin käyttöön liittyvistä asioista:
+Tässä oppaassa näytetään, miten tekoälypohjaista GitHub Copilot -koodiavustinta käytetään Visual Studio Codessa. Oppaassa kerrotaan seuraavista Copilotin käyttöön liittyvistä asioista:
 - Miten koodiehdotukset saa editoriin ja miten niitä hyödynnetään
 - Miten käytetään chat-keskusteluja koodin refaktorointiin ja selittämiseen
-- Miten korjataan virheitä
+- Miten korjataan virheitä Copilotin avulla
 - Miten käsitellään useampaan tiedostoon kohdistuvia muutosehdotuksia Copilot Chatillä ja Copilot Editsillä.
 
 ## GitHub Copilot
@@ -40,9 +40,7 @@ Kun luot uuden tiedoston VS Codella, tarjoaa editori heti mahdollisuutta Inline 
 
 Inline Chat aukeaa koodieditoriin tiedostokohtaisesti. Tekoälyn avulla käytävä keskustelu kohdistuu siis avoinna olevaan tiedostoon.
 
-Inline Chatin lisäksi keskustelua voi käydä myös tavallisessa Chat-ikkunassa, joka avautuu ruudun oikealle puolelle omaan ikkunaansa. Chat-ikkunan saa päälle painamalla Ctrl-Alt-I tai ikkunan yläosassa olevasta valikosta.
-
-![](images/opencopilotchat1.png)
+Inline Chatin lisäksi keskustelua voi käydä myös tavallisessa Chat-ikkunassa, joka avautuu ruudun oikealle puolelle omaan ikkunaansa. Chat-ikkunan käytöstä kerrotaan tässä oppaassa myöhemmin.
 
 ### Mallidatan generointi Inline Chatin avulla
 
@@ -64,7 +62,7 @@ Lista ei ole välttämättä vielä haluamassasi muodossa. Esimerkiksi alueiden 
 
 ![](images/fileofcities.png)
 
-Kun kaupunkien tiedot ovat haluamassasi muodossa, paina Accept. Poista otsikkorivi alusta ja tallenna tiedosto.
+Kun kaupunkien tiedot ovat haluamassasi muodossa, paina Accept. Poista otsikkorivi tiedoston cities.txt alusta ja tallenna tiedosto.
 
 ### Ohjelmakoodin generoiminen Inline Chatin avulla
 
@@ -76,7 +74,7 @@ Tee uusi tiedosto readcities.py ja avaa Inline Chat. Kokeile seuraavaa promptia:
 Make a program, which reads the file cities.txt. The program creates a list of city dictionaries.
 ```
 
-Copilot ei välttämättä osaa huomioida tiedoston cities.txt kenttiä. Promptia täytyy todennäköisesti tarkentaa esimerkiksi näin:
+Copilot ei välttämättä osaa huomioida tiedoston cities.txt kenttiä. Promptia täytyy todennäköisesti tarkentaa kuvaamalla tiedoston sisältöä:
 
 ```
 Make a program, which reads the file cities.txt. The program creates a list of city dictionaries. Each row in the file contains the following fields: name, region, population, latitude and longitude.
@@ -236,7 +234,7 @@ Ohjelma ei kuitenkaan toimi oikein, jos City-luokasta puuttuu __str__-metodi. Li
 
 ## Muutokset useampaan tiedostoon Copilot Chatin avulla
 
-Uuden toiminnallisuuden tekeminen kohdistuu usein useampaan tiedostoon. Pyydetään Copilotia muokkaamaan ohjelmaa siten, että laskee etäisyyden ensimmäisen kaupungin ja kaikkien muiden kaupunkien välillä. Etäisyyden laskeva funktio sijoitetaan City-luokkaan.
+Uuden toiminnallisuuden tekeminen kohdistuu usein useampaan tiedostoon. Pyydetään Copilotia muokkaamaan ohjelmaa siten, että se laskee etäisyyden ensimmäisen kaupungin ja kaikkien muiden kaupunkien välillä. Etäisyyden laskeva funktio sijoitetaan City-luokkaan.
 
 Koska muutokset koskevat nyt kahta tiedostoa, voit auttaa Copilotia kertomalla sille ohjelman kontekstin. Kirjoita kehotteeseen ensin @workspace ja sitten tiedostojen nimet #-merkkien perään:
 
