@@ -28,7 +28,7 @@ Asenna seuraavaksi GitHub Copilot -laajennus Visual Studio Codeen: [GitHub Copil
 
 ## Esimerkkisovellus
 
-Tutustutaan ensin tekoälyavustimen käyttöön tekemällä yksinkertainen esimerkkisovellus Copilotin avulla. Tehdään sovellus, joka lukee tiedostosta dataa Suomen suurimmista kaupungeista. Ohjelma järjestää kaupungit eri parametrien mukaan ja käsittelee kaupunkeja alueittain.
+Tutustutaan ensin tekoälyavustimen käyttöön tekemällä yksinkertainen esimerkkisovellus Copilotin avulla. Esimerkkisovellus lukee tiedostosta dataa Suomen suurimmista kaupungeista. Ohjelma järjestää kaupungit eri parametrien mukaan ja käsittelee kaupunkeja alueittain.
 
 Harjoituksessa perehdytään ensin Inline Chatin käyttöön. Tämän jälkeen kokeillaan Copilot Chatiä koodin selittämiseen ja yleisiin ohjelmointiin liittyviin kysymyksiin. Lopuksi tutustutaan Copilot Edits- työkaluun, jolla voi tehdä tehokkaasti useampaan tiedostoon kohdistuvia muutoksia.
 
@@ -136,7 +136,7 @@ if __name__ == "__main__":
     main()
 ```
 
-Kokeile taas ajaa ohjelma.
+Testaa ohjelman toiminta ajamalla se.
 
 ### Automaattinen koodin täydennys
 
@@ -144,7 +144,7 @@ Olet ehkä jo huomannut, että Copilot ehdottaa kooditäydennyksiä jopa pyytäm
 
 Koodiin kirjoitettuja kommentteja voi käyttää myös Copilotin kehotteena Inline Chatin sijaan.
 
-Lisää seuraava kommentti main-funktioon:
+Lisää kommentti ```python #sort cities by name ``` main-funktioon:
 
 ![](images/commentexample1.png)
 
@@ -170,6 +170,8 @@ def main():
     total_population = sum(city['population'] for city in cities)
     print('Total population:', total_population)
 ```
+
+Tallenna muutokset ja aja ohjelma.
 
 ## Copilot Chat yleisiin ohjelmointikysymyksiin
 
