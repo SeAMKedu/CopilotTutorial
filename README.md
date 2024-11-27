@@ -218,7 +218,7 @@ class City:
 
 Avaa editoriin readcities.py. Aktivoi sitten Chat-ikkunan puolelta koodiehdotus tiedostolle readcities.py.
 
-![](images/chatreadcities.png.png)
+![](images/chatreadcities.png)
 
 Valitse Chat-ikkunan readcities.py-koodi-ikkunan valikosta ensimmäinen symboli Apply In Editor.
 
