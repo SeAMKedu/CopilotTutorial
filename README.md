@@ -297,7 +297,11 @@ Copilots Edits generoi nyt muutosehdotukset eri tiedostoihin ja näyttää muuto
 
 ![](images/editsdone.png)
 
-Voit hyväksyä kaikki muutokset kerralla painamalla Accept Copilot Edits -listassa. On kuitenkin parempi tarkistaa muutokset ja hyväksyä ne yksi kerrallaan valitsemalla tiedoston listasta. Kukin muutettu tiedosto täytyy vielä tallentaa.
+Voit hyväksyä kaikki muutokset kerralla painamalla Accept Copilot Edits -listassa. On kuitenkin parempi tarkistaa muutokset ja hyväksyä ne yksi kerrallaan valitsemalla tiedoston listasta.
+
+![](images/image.png)
+
+Kukin muutettu tiedosto täytyy vielä tallentaa.
 
 Copilot Edits lisäsi cities.txt uuden sarakkeen pinta-aloja varten. Tiedostoon city.py lisättiin jäsenmuuttuja area konstruktoriin ja ```__str__```-metodiin. Tiedostoon readcities.py tehtiin useita muutoksia, että pinta-alat saadaan luettua tiedostosta.
 
@@ -315,6 +319,12 @@ Move the distance calcution from the city class to a static funtion in a separat
 Copilot Edits kertoo poistaneensa distance-metodin luokasta City ja lisänneensä uuden tiedoston distance.py, jossa on etäisyyksien laskenta. Lisäksi Copilot kertoi päivittäneensä main-funktiota niin, että se käyttää uutta metodia.
 
 Huomaa, että GitHub Copilot voi antaa eri kerroilla erilaisia koodiehdotuksia ja promptaamisen tarkentamisen tarve voi vaihdella. Copilot "oppii" koulutehtävät nopeasti ja yleisimmissä koulutehtävissä saattaa riittää, että kirjoittaa vain vähän ohjelman alkua. Koulutehtävissä Copilot arvaa usein ehkä hieman liiankin helposti, mitä aiot seuraavaksi tehdä.
+
+## Seuraavaksi
+
+Voit opiskella GitHub Copilotin käyttöä lisää esimerkiksi seuraavilta sivuilta:
+
+[Getting started with GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/getting-started)
 
 ## Muutamia huomioita tekoälyavustinten käytöstä ohjelmoinnissa
 
