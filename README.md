@@ -1,5 +1,7 @@
 # GitHub Copilot -koodiavustimen käytön alkeet
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14234294.svg)](https://doi.org/10.5281/zenodo.14234294)
+
 ## Sisältö
 
 Tässä oppaassa näytetään, miten tekoälypohjaista GitHub Copilot -koodiavustinta käytetään Visual Studio Codessa. Oppaassa kerrotaan seuraavista Copilotin käyttöön liittyvistä asioista:
